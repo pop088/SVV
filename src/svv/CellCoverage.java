@@ -4,13 +4,14 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class CellCoverage {
-	int allstate = GameConstant.rows * GameConstant.cols * GameConstant.statePerCell;
+	int allstate = 0;
 	int curVisited = 0;
 	
 	Set<Cell> visited;
 	
-	CellCoverage(){
+	CellCoverage(BoardState bs){
 		visited = new HashSet<Cell>();
+		allstate = bs.rows * bs.cols * bs.statePerCell;
 	}
 	
 	public void update(BoardState bs){
