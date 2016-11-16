@@ -4,11 +4,12 @@ import svv.GameConstant.Player;
 
 public class Move {
 	
-	Player p;
+	Player nextPlayer;
 	Cell update;
 	
+	
 	Move(Player _p, Cell c){
-		this.p = _p;
+		this.nextPlayer = _p;
 		this.update = c;
 	}
 	

@@ -4,8 +4,8 @@ import java.util.List;
 
 import svv.GameConstant.Winner;
 
-public class TicTacToe extends BoardState {
-	
+public class MineSweepTester extends BoardState{
+
 	@Override
 	public boolean isValid() {
 		// TODO Auto-generated method stub
@@ -13,15 +13,17 @@ public class TicTacToe extends BoardState {
 	}
 
 	@Override
-	public Winner getWinner() {
+	public
+	Winner getWinner() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public BoardState getInitState() {
+	public
+	BoardState getInitState() {
 		// TODO Auto-generated method stub
-		return new TicTacToe();
+		return null;
 	}
 
 	@Override

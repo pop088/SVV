@@ -4,7 +4,7 @@ import java.util.List;
 
 import svv.GameConstant.Winner;
 
-public class MineSweep extends BoardState{
+public class SudokuTester extends BoardState{
 
 	@Override
 	public boolean isValid() {

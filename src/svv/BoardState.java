@@ -60,9 +60,7 @@ public abstract class BoardState {
 	}
 	
 	public void makeMove(Move move) throws Exception{
-		if(move.p != this.turn){
-			throw new Exception("Wrong player to make a move");
-		}
+		this.turn = move.nextPlayer;
 		matrix.put(Coordinate.of(move.update.row, move.update.col), move.update);
 		this.w = getWinner();
 	}
