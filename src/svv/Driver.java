@@ -15,30 +15,30 @@ public class Driver {
 		return prev;
 	}
 	
-	static void genTests(String path, BoardState init) throws Exception{
-		
-		CellCoverage cc = new CellCoverage(init);
-		File f = new File(path);
-		FileWriter fw = new FileWriter(f.getAbsoluteFile());
-		BufferedWriter bw = new BufferedWriter(fw);
-		BoardState cur;
-		while(cc.getCoverage() < 1.0){
-			cur = init;
-			while(cur.getWinner() != Winner.Neither){
-				
-				List<Move> possibleMoves = cur.getPossibleMove();
-				Random r = new Random();
-				int movePicked = r.nextInt(possibleMoves.size());
-				Move curMove = possibleMoves.get(movePicked);
-				cur = nextState(cur, curMove);
-				cc.update(cur);
-				
-				bw.write(curMove.toString() + ", " + cur.toString() + "\n");
-			}
-			bw.write("\n");
-		}
-		bw.close();
-	}
+//	static void genTests(String path, BoardState init) throws Exception{
+//		
+//		CellCoverage cc = new CellCoverage(init);
+//		File f = new File(path);
+//		FileWriter fw = new FileWriter(f.getAbsoluteFile());
+//		BufferedWriter bw = new BufferedWriter(fw);
+//		BoardState cur;
+//		while(cc.getCoverage() < 1.0){
+//			cur = init;
+//			while(cur.getWinner() == Winner.Neither){
+//				
+//				List<Move> possibleMoves = cur.getPossibleMove();
+//				Random r = new Random();
+//				int movePicked = r.nextInt(possibleMoves.size());
+//				Move curMove = possibleMoves.get(movePicked);
+//				cur = nextState(cur, curMove);
+//				cc.update(cur);
+//				
+//				bw.write(curMove.toString() + ", " + cur.toString() + "\n");
+//			}
+//			bw.write("\n");
+//		}
+//		bw.close();
+//	}
 	
 	static float runTests(GameSocket gs, BoardState bs) throws Exception{
 		
@@ -54,7 +54,7 @@ public class Driver {
 			cur = bs.getInitState();
 			gs.startNewGame();
 			
-			while(cur.getWinner() != Winner.Neither){
+			while(cur.getWinner() == Winner.Neither){
 				
 				List<Move> possibleMoves = cur.getPossibleMove();
 				Random r = new Random();
