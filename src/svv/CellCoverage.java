@@ -12,7 +12,8 @@ public class CellCoverage {
 	
 	CellCoverage(BoardState bs){
 		visited = new HashSet<Cell>();
-		allstate = bs.rows * bs.cols * bs.statePerCell;
+		int numOfSlot = bs.getEmptyCells().size();
+		allstate = numOfSlot * bs.statePerCell;
 	}
 	
 	public void update(BoardState bs){
@@ -24,7 +25,7 @@ public class CellCoverage {
 	}
 	
 	public float getCoverage(){
-		return curVisited / allstate;
+		return (float) curVisited / allstate;
 	}
 	
 	
