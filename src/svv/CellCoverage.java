@@ -1,5 +1,6 @@
 package svv;
 
+import java.awt.Point;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +16,7 @@ public class CellCoverage {
 	}
 	
 	public void update(BoardState bs){
-		for(Coordinate coor : bs.matrix.keySet()){
+		for(Point coor : bs.matrix.keySet()){
 			if(visited.add(bs.matrix.get(coor))){
 				curVisited++;
 			}
